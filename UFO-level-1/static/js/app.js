@@ -18,8 +18,9 @@ var button = d3.select("#filter-btn");
 var inputField = document.getElementById("datetime")
 
 button.on("click", function() {
+    d3.selectAll("td").remove();
     var filteredData = tableData.filter(function(row) {
-        row.datetime.includes(inputField.value)
+        return row.datetime.includes(inputField.value);
     })
 
     var i;
