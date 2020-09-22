@@ -14,3 +14,9 @@ for (i = 0; i < tableData.length; i++) {
 
 }
 
+var button = d3.select("#filter-btn");
+var inputField = document.getElementById("datetime")
+
+button.on("click", function() {
+    console.log(inputField.value);
+});
