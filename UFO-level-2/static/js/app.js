@@ -1,7 +1,7 @@
 // from data.js
 var tableData = data;
 
-// Rendering table
+// YOUR CODE HERE!
 var tbody = d3.select("tbody");
 
 var i;
@@ -14,7 +14,6 @@ for (i = 0; i < tableData.length; i++) {
 
 }
 
-// Filtering data
 var button = d3.select("#filter-btn");
 var inputField = document.getElementById("datetime")
 
