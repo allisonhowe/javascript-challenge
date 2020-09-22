@@ -18,5 +18,16 @@ var button = d3.select("#filter-btn");
 var inputField = document.getElementById("datetime")
 
 button.on("click", function() {
-    console.log(inputField.value);
+    var filteredData = tableData.filter(function(row) {
+        row.datetime.includes(inputField.value)
+    })
+
+    var i;
+    for (i = 0; i < filteredData.length; i++) {
+        var newRow = tbody.append("tr");
+        Object.entries(filteredData[i]).forEach(([key, value]) => {
+            var cell = newRow.append("td");
+            cell.text(value);
+        });
+    }
 });
