@@ -14,7 +14,7 @@ for (i = 0; i < tableData.length; i++) {
 
 }
 
-// Filtering data
+// Filtering data on button click
 var button = d3.select("#filter-btn");
 var inputField = document.getElementById("datetime")
 

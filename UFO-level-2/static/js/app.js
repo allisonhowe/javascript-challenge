@@ -1,7 +1,7 @@
 // from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
+// From Part 1
 var tbody = d3.select("tbody");
 
 var i;
@@ -14,13 +14,22 @@ for (i = 0; i < tableData.length; i++) {
 
 }
 
+// Part 2 Update
 var button = d3.select("#filter-btn");
-var inputField = document.getElementById("datetime")
+var dateInputField = document.getElementById("datetime");
+var cityInputField = document.getElementById("city");
+var stateInputField = document.getElementById("state");
+var countryInputField = document.getElementById("country");
+var shapeInputField = document.getElementById("shape");
 
 button.on("click", function() {
     d3.selectAll("td").remove();
     var filteredData = tableData.filter(function(row) {
-        return row.datetime.includes(inputField.value);
+        return row.datetime.includes(dateInputField.value) &&
+            row.city.includes(cityInputField.value) &&
+            row.state.includes(stateInputField.value) &&
+            row.country.includes(countryInputField.value) &&
+            row.shape.includes(shapeInputField.value);
     })
 
     var i;
